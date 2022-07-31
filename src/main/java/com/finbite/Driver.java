@@ -40,7 +40,7 @@ public class Driver {
         }}, PackageType.LARGE);
     }
 
-    private Double calculateInvoiceTotal(Map<EntityType, Integer> usage, PackageType packageType) {
+    protected Double calculateInvoiceTotal(Map<EntityType, Integer> usage, PackageType packageType) {
         PackageCls packageCls = this.getPackageClsList().stream().filter(obj -> obj.getPackageType() == packageType)
                 .findFirst().orElseThrow(() -> new DataNotFound(String.format("No data found for package %s", packageType)));
         Double totalAmount = packageCls.getBasePrice();
