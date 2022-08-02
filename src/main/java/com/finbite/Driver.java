@@ -45,7 +45,7 @@ public class Driver {
                 .findFirst().orElseThrow(() -> new DataNotFound(String.format("No data found for package %s", packageType)));
         Double totalAmount = packageCls.getBasePrice();
         System.out.println(String.format("************************ Package %s ************************", packageType));
-        System.out.println("Service Name\t\t\t\t\t\tAmount Due");
+        System.out.println("Service Name\t\t\t\tAmount Due");
         System.out.println(String.format("%-10s%33s", "Base Price", AppUtil.formatCurrency(packageCls.getBasePrice(), locale)));
         for (Map.Entry<EntityType, Integer> entry : usage.entrySet()) {
             Price price = this.getPriceList().stream().filter(obj -> obj.getEntityType() == entry.getKey())

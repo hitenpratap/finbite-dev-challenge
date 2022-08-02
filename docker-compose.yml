@@ -1,0 +1,10 @@
+version: '3'
+services:
+  invoice-total-service:
+    container_name: invoice-total
+    build: .
+    networks:
+      - finbite-dev-challenge
+networks:
+  finbite-dev-challenge:
+    driver: bridge
